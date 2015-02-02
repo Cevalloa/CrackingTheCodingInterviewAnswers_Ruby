@@ -12,5 +12,21 @@ def methodChecksIfStringUnique(parameter_string)
 	
 end
 
-puts methodChecksIfStringUnique("racecar") # => returns false
-puts methodChecksIfStringUnique("qdba") # => returns true
+# puts methodChecksIfStringUnique("racecar") # => returns false
+# puts methodChecksIfStringUnique("qdba") # => returns true
+
+
+#Implement a function void reverse(char * str) in C or C++ which reverse a null terminated string
+def reverse (string_to_check)
+
+	if string_to_check.bytes.last == 0
+		puts "yup"
+		return string_to_check.reverse
+	end
+
+	nil
+
+end
+
+puts reverse("hello\x00") # => returns string reversed
+puts reverse("hell") # => returns nil
