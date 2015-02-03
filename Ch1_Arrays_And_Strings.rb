@@ -28,5 +28,15 @@ def reverse (string_to_check)
 
 end
 
-puts reverse("hello\x00") # => returns string reversed
-puts reverse("hell") # => returns nil
+# puts reverse("hello\x00") # => returns string reversed
+# puts reverse("hell") # => returns nil
+
+#1.3 Given two strings, write a method to decide if one a permutation of the other
+def check_perm (string_one, string_two)
+
+(return true) if (string_one.chars.sort == string_two.chars.sort)
+
+end
+
+#puts check_perm("test", "estt") # => Same letters, so returns true
+#puts check_perm("None", "work") # => Different letters, returns false
