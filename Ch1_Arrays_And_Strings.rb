@@ -40,3 +40,30 @@ end
 
 #puts check_perm("test", "estt") # => Same letters, so returns true
 #puts check_perm("None", "work") # => Different letters, returns false
+
+#1.4 Write a method to replace all spaces in a string with "%20"
+
+#Ruby way
+def stringWithPercents (string_parameter)
+	string_parameter.gsub(" ", "%20")
+end
+
+#puts stringWithPercents("Hello Mr Jack") # => Prints with %20s
+
+#Different way
+def stringWithPerecentsAgain (string_parameter)
+	array_returned = []
+	string_parameter.each_char do |char_value|
+		if (char_value == " ")
+			char_value = "%20"
+		end
+		array_returned << char_value
+	end
+	array_returned.join
+end
+
+#puts stringWithPerecentsAgain("Hello Again Mr Jack") # => Prints with %20s again
+
+
+
+
