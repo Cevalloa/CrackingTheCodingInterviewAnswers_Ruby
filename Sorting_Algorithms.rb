@@ -103,6 +103,30 @@ class BST
 
 end
 
+#Bubble Sort
+def bubble_sort(array_parameter)
+
+	flag = true
+
+	while(flag) do
+		flag = false
+
+		for x in (0...array_parameter.length-1) do 
+			if array_parameter[x] > array_parameter[x+1]
+				temp = array_parameter[x]
+				array_parameter[x] = array_parameter[x +1]
+				array_parameter[x+1] = temp
+				flag = true;
+			end
+
+		end
+
+	end
+
+	array_parameter
+end
+
+puts bubble_sort([2,4,6,7,1])
 
 
 
