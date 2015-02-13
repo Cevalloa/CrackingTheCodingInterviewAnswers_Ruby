@@ -67,11 +67,28 @@ puts bubble_sort([2,4,6,7,1])
 
 # Selection Sort
 
-# Suppose A is an array of N values. We want to sort A in ascending order. 
-#That is, A[1] should be the smallest and A[N] should be the largest.
-
 # The idea of Selection Sort is that we repeatedly find the smallest element in the 
 #unsorted part of the array and swap it with the first element in the unsorted part of the array.
+
+def selection_sort(array_unsorted)
+	for x in (0...array_unsorted.length)
+		lowest_index = x
+		for l in (x...array_unsorted.length)
+			if array_unsorted[lowest_index] > array_unsorted[l]
+				lowest_index = l
+			end 
+		end
+
+	temp_var = array_unsorted[lowest_index]
+	array_unsorted[lowest_index] = array_unsorted[x]
+	array_unsorted[x] = temp_var
+
+	end
+	array_unsorted
+end
+
+puts "##Selection Sort##" 
+puts selection_sort([2,4,6,7,1])
 
 
 
