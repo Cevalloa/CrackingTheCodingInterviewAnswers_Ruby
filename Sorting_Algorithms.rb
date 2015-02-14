@@ -90,7 +90,25 @@ end
 puts "##Selection Sort##" 
 puts selection_sort([2,4,6,7,1])
 
+puts "##Binary Search##"
+def binary_search(array_sent, key)
 
+	mid = array_sent.length/2
+
+	if array_sent[mid] == key
+		return "Found #{key}"
+	elsif array_sent.length == 1 && array_sent[0] != key
+		return "Not found"
+	elsif array_sent[mid] < key
+		binary_search(array_sent[mid + 1...array_sent.length], key )
+	elsif array_sent[mid] > key
+		binary_search(array_sent[0...mid], key)
+	end
+
+end
+
+puts "##Binary Search##"
+puts binary_search([0,1,2,3,4,5,6,7,8], 7)
 
 
 
