@@ -61,3 +61,81 @@ class BST
 	end
 
 end
+
+
+
+#Another Binary Search Tree with inorder
+
+class Node
+
+	attr_accessor :value, :parent, :left_child, :right_child
+
+	def initialize(value, parent = nil, left_child = nil, right_child = nil)
+		@value = value
+		@parent = parent
+		@left_child = left_child
+		@right_child = right_child
+	end	
+
+end
+
+class BST
+	attr_accessor :root
+
+	def add_elements(data_array)
+		data_array.each{|x| self.add_each(x)}
+	end
+
+	def add_each(element)
+		if @root.nil?
+			@root = Node.new(element)
+		else
+			self.attach_to_tree(Node.new(element), @root)
+		end
+	end 
+
+	def attach_to_tree(contending_node, established_node)
+		return contending_node if established_node.nil?
+
+		contending_node.parent = established_node
+		if (contending_node.value < established_node.value)
+			established_node.left_child = attach_to_tree(contending_node, established_node.left_child)
+		elsif (contending_node.value > established_node.value)
+			established_node.right_child = attach_to_tree(contending_node, established_node.right_child)
+		end
+
+	end
+
+	def in_order(root_node)
+		return 
+
+	end
+
+	def in_order(root_node)
+		in_order(root_node.left_child)
+		puts root_node
+		in_order(root_node.right_child)
+
+	end
+
+
+end
+
+test = BST.new
+test.add_elements([4,2,1])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
