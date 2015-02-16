@@ -103,17 +103,14 @@ class BST
 		elsif (contending_node.value > established_node.value)
 			established_node.right_child = attach_to_tree(contending_node, established_node.right_child)
 		end
-
+		established_node
 	end
 
-	def in_order(root_node)
-		return 
-
-	end
 
 	def in_order(root_node)
+		return nil if root_node.nil?
 		in_order(root_node.left_child)
-		puts root_node
+		puts root_node.value
 		in_order(root_node.right_child)
 
 	end
@@ -123,6 +120,8 @@ end
 
 test = BST.new
 test.add_elements([4,2,1])
+test.in_order(test.root)
+
 
 
 
