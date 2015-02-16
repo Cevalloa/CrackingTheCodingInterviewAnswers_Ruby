@@ -123,6 +123,40 @@ test.add_elements([4,2,1])
 test.in_order(test.root)
 
 
+#Stack
+
+class Stack
+	attr_reader :stack_list
+
+	def initialize()
+		@stack_list = []
+	end
+
+	def add(*element)
+		element.each{|x| @stack_list << x}
+	end
+
+	def peek
+		puts "The last element is #{@stack_list[-1]}"
+	end
+
+	def pop
+		puts @stack_list.slice!(-1)
+	end
+
+	def print_stack
+		puts @stack_list.inspect
+	end
+
+end
+
+stackTest = Stack.new
+stackTest.add(4,2,1)
+stackTest.peek
+stackTest.pop
+stackTest.print_stack
+
+
 
 
 
