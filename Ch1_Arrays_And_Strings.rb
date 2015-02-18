@@ -29,19 +29,29 @@ def reverse (string_to_check)
 end
 
 #1.2.a Reverse a string in place
-def reverse_in_place(string_to_reverse)
+def reverse_in_place (string_to_reverse)
 
-	count_down = string_to_reverse.length -1
-	for l in (0...string_to_reverse.length)
-		temp_var= string_to_reverse[l]
+	count_down = string_to_reverse.length-1
+	for l in (0...string_to_reverse.length/2)
+		temp_var = string_to_reverse[l]
 		string_to_reverse[l] = string_to_reverse[count_down]
 		string_to_reverse[count_down] = temp_var
-
+		puts string_to_reverse
 		count_down -= 1
 
 	end
 
+	 string_to_reverse
+
 end
+
+def strino(stars)
+	puts stars
+	end
+
+	strino("hello")
+
+ puts reverse_in_place("swable")
 
 # puts reverse("hello\x00") # => returns string reversed
 # puts reverse("hell") # => returns nil

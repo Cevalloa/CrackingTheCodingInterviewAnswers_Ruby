@@ -65,7 +65,7 @@ end
 
 
 #Another Binary Search Tree with inorder
-
+puts "#BST" 
 class Node
 
 	attr_accessor :value, :parent, :left_child, :right_child
@@ -118,13 +118,14 @@ class BST
 
 end
 
+
 test = BST.new
 test.add_elements([4,2,1])
 test.in_order(test.root)
 
 
 #Stack
-
+puts "#Stack"
 class Stack
 	attr_reader :stack_list
 
@@ -155,6 +156,8 @@ stackTest.add(4,2,1)
 stackTest.peek
 stackTest.pop
 stackTest.print_stack
+
+
 
 
 

@@ -110,6 +110,16 @@ end
 puts "##Binary Search##"
 puts binary_search([0,1,2,3,4,5,6,7,8], 7)
 
+puts "Quick Sort.. needs extra space for 2 arrays" 
+def quicksort_memory_hog(array_unsorted)
+
+
+end
+
+
+
+
+
 
 
 
