@@ -16,7 +16,7 @@ end
 # puts methodChecksIfStringUnique("qdba") # => returns true
 
 
-#Implement a function void reverse(char * str) in C or C++ which reverse a null terminated string
+#1.2. plement a function void reverse(char * str) in C or C++ which reverse a null terminated string
 def reverse (string_to_check)
 
 	if string_to_check.bytes.last == 0
@@ -25,6 +25,21 @@ def reverse (string_to_check)
 	end
 
 	nil
+
+end
+
+#1.2.a Reverse a string in place
+def reverse_in_place(string_to_reverse)
+
+	count_down = string_to_reverse.length -1
+	for l in (0...string_to_reverse.length)
+		temp_var= string_to_reverse[l]
+		string_to_reverse[l] = string_to_reverse[count_down]
+		string_to_reverse[count_down] = temp_var
+
+		count_down -= 1
+
+	end
 
 end
 
