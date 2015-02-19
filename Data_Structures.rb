@@ -157,6 +157,50 @@ stackTest.peek
 stackTest.pop
 stackTest.print_stack
 
+#Linked List
+puts "#Linked List"
+
+class Linked_Node
+	attr_accessor :value, :next
+
+	def initialize(value , next = nil)
+		@value = value
+		@next = next
+	end
+
+end
+
+class LinkedList
+
+	attr_accessor :head
+
+	def initialize value
+
+		@head = Linked_Node.new(value,nil)
+
+	end
+
+	def add(value)
+
+		current = @head
+		while current.next != nil
+			current = current.next_node
+		end
+
+		 current.next = Linked_Node.new(value,nil)
+
+	end
+
+
+
+end
+
+
+
+
+
+
+
 
 
 
