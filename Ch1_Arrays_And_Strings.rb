@@ -45,13 +45,7 @@ def reverse_in_place (string_to_reverse)
 
 end
 
-def strino(stars)
-	puts stars
-	end
-
-	strino("hello")
-
- puts reverse_in_place("swable")
+#puts reverse_in_place("swable")
 
 # puts reverse("hello\x00") # => returns string reversed
 # puts reverse("hell") # => returns nil
@@ -88,6 +82,23 @@ def stringWithPerecentsAgain (string_parameter)
 end
 
 #puts stringWithPerecentsAgain("Hello Again Mr Jack") # => Prints with %20s again
+
+#memory efficient way (N run time with no extra memory allocated)
+def stringWithPercentsAgainEfficient(string_parameter)
+
+	string_parameter.chars.map do |character|
+		if character == " "
+		 	character = "%20"
+		else
+			character
+		end
+	end.join
+
+end
+
+p stringWithPercentsAgainEfficient("Hello mr again")
+
+#1.5 Implement method to perform basic string compression
 
 
 
