@@ -130,6 +130,35 @@ class BST
 
 	end
 
+	def depth_first_search(root_node, key)
+		stack = [root_node]
+
+		while (!(stack.empty?))
+			current = stack.pop
+
+			return "found" if current == key
+
+			stack.push root_node.left_child if root_node.left_child != nil
+				
+			stack.push root_node.right_child if root_node.right_child != nil
+		end
+
+	def breadth_first_search(root_node, key)
+
+		queue = [root_node]
+		while (!(queue.empty?))
+
+			current = queue.shift
+
+			return "found" if current == key
+
+			current.push current.left_child if current.left_child != nil
+			current.push current.right_child if current.right_child != nil
+
+		end 
+
+
+	end
 
 
 end
