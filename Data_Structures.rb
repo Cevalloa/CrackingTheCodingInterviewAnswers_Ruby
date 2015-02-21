@@ -184,10 +184,44 @@ class LinkedList
 
 		current = @head
 		while current.next != nil
-			current = current.next_node
+			current = current.next
 		end
 
 		 current.next = Linked_Node.new(value,nil)
+
+	end
+
+	def remove(value)
+
+		current = @head
+
+		if current.value = value
+			@head = current.next
+			return "Removed"
+		else
+			while current.next.value != value
+				if current.next.value == nil
+					return "Not found"
+				end
+
+				current = current.next
+			end
+
+			current.next = current.next.next
+				return "Removed"
+
+		end
+
+		def search(value)
+			
+		end
+
+	end
+
+
+
+
+
 
 	end
 
