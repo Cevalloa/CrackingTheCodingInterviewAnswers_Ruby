@@ -96,10 +96,63 @@ def stringWithPercentsAgainEfficient(string_parameter)
 
 end
 
-p stringWithPercentsAgainEfficient("Hello mr again")
+#p stringWithPercentsAgainEfficient("Hello mr again")
 
-#1.5 Implement method to perform basic string compression
+#1.5 Implement method to perform basic string compression, if there are only 1's then return the string itself
+#aabcccccaaa would become a2blc5a3
+#If the "compressed" string would not become smaller than the original string, your method should return the original string
 
+def stringCompression(string_value)
+	
+	start_counter = 0
+	end_counter = 0
+
+	hash_with_count = {}
+	string_returned = ""
+	while(true)
+
+		#If the counter is starting ahead of the string size..time to break loop
+		if start_counter > string_value.length-1
+			#Is the string just itself with their 'one' counterparts?
+			if string_value.length * 2 == string_returned.length
+				return string_value
+			end
+
+				return string_returned
+		end
+
+
+		if string_value[start_counter] == string_value[end_counter]
+
+			current_letter = string_value[start_counter]
+
+			if hash_with_count[current_letter].nil?
+				hash_with_count[current_letter] = 1
+			else
+				hash_with_count[current_letter] += 1
+			end
+
+
+			end_counter += 1
+
+		#Means there is a new letter
+		else
+			string_returned += "#{current_letter}#{hash_with_count[current_letter]}"
+			#Time to start checking with this new letter
+			start_counter = end_counter
+			hash_with_count.clear
+
+		end
+
+
+	end
+
+end
+
+p stringCompression("tesst")
+p stringCompression("abccdd")
+p stringCompression("abc")
+p stringCompression("test")
 
 
 
