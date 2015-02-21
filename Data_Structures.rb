@@ -106,6 +106,12 @@ class BST
 		established_node
 	end
 
+	def pre_order(root_node)
+		return nil if root_node.nil?
+		puts root_node.value
+		pre_order(root_node.left_child)
+		pre_order(root_node.right_child)
+	end
 
 	def in_order(root_node)
 		return nil if root_node.nil?
@@ -114,6 +120,16 @@ class BST
 		in_order(root_node.right_child)
 
 	end
+
+	def post_order(root_node)
+		return nil if root_node.nil?
+
+		post_order(root_node.left_child)
+		post_order(root_node.right_child)
+		puts root_node.value
+
+	end
+
 
 
 end
