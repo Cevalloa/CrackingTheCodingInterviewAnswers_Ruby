@@ -149,10 +149,28 @@ def stringCompression(string_value)
 
 end
 
-p stringCompression("tesst")
-p stringCompression("abccdd")
-p stringCompression("abc")
-p stringCompression("test")
+# p stringCompression("tesst")
+# p stringCompression("abccdd")
+# p stringCompression("abc")
+# p stringCompression("test")
+
+#1.8  Given two strings, s i and s2, write code to 
+#check if s2 is a rotation of si using only one call to isSubstring 
+#(e.g.,"waterbottle"is a rota- tion of "erbottlewat").
+
+def isRotation(string_regular, string_possibly_rotated)
+
+	double_string = string_regular + string_regular
+
+	double_string.include?(string_possibly_rotated)
+
+end
+
+p isRotation("waterbottle", "erbottlewat")
+p isRotation("waterbottle", "erbottlewaet")
+
+
+
 
 
 
