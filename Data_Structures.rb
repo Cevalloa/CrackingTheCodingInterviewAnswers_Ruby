@@ -160,6 +160,26 @@ class BST
 
 	end
 
+	def check_if_bst(root_node)
+		if root_node.nil?
+			return true
+		else
+			return false
+		end
+
+		if (root_node.value > root_node.left_child.value) && (root_node.value < root_node.right_child.value)
+			if (check_if_bst(root_node.left_child) && check_if_bst(root_node.right_child))
+				return true
+			else
+				return false
+			end
+		else
+			return false
+		end
+
+
+	end
+
 
 end
 
