@@ -31,6 +31,31 @@ class LinkedList
 
 	end
 
+	def insert_item_at(value, index)
+
+		if index == 0
+
+			@root = Node.new(value, @root)
+
+		else
+
+			current_index = 0
+			current = @root
+
+			while ((current_index != index-1) || current.next != nil)
+
+				current_index += 1
+				current = current.next
+
+			end
+
+			current.next = Node.new(value, current.next)
+
+
+		end
+
+	end
+
 	def display_all
 
 		if @root.nil?
@@ -54,6 +79,10 @@ puts "Start Single Linked List"
 testList = LinkedList.new(4)
 testList.add(6)
 testList.add(8)
+testList.insert_item_at(5,0)
+testList.insert_item_at(4,2)
+testList.insert_item_at(7,4)
+
 testList.display_all
 
 #Double LinkedList
