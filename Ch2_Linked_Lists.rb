@@ -42,7 +42,7 @@ class LinkedList
 			current_index = 0
 			current = @root
 
-			while ((current_index != index-1) || current.next != nil)
+			while ((current_index != index-1) && current.next != nil)
 
 				current_index += 1
 				current = current.next
@@ -53,6 +53,29 @@ class LinkedList
 
 
 		end
+
+	end
+
+	def delete_item_at(index)
+
+		if index == 0
+
+			@root = @root.next
+
+		else
+			current_index = 0
+			current = @root
+			while ((current_index !=  index-1) && (current.next != nil))
+
+				current_index += 1
+				current = current.next
+
+			end
+
+			current.next = current.next.next
+
+		end
+
 
 	end
 
@@ -82,6 +105,7 @@ testList.add(8)
 testList.insert_item_at(5,0)
 testList.insert_item_at(4,2)
 testList.insert_item_at(7,4)
+testList.delete_item_at(3)
 
 testList.display_all
 
