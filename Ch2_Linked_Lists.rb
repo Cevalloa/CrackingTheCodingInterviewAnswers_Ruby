@@ -97,6 +97,35 @@ class LinkedList
 
 	end
 
+	#2.1 code to remove duplicates from an unsorted linkedlist
+		#no temporary buffer is allowed
+	def remove_duplicates
+
+		current = @root   #Value currently checking
+
+		#For every current node, run the starting node & check if there is a match
+
+
+		while current != nil  #Going to go over every value
+			starting = current  #Starts checking where it hasn't been checked
+
+			while starting.next != nil  #Continue if it isn't at the end of the line
+
+				if starting.next.value == current.value  #If the value is eql to the value we are checking
+					#delete this node
+					starting.next = starting.next.next
+				else
+					starting = starting.next  #Check next in line
+				end
+			end
+
+			current = current.next  #begin checking if any other values match this value
+
+		end
+
+
+	end
+
 end
 puts "Start Single Linked List"
 testList = LinkedList.new(4)
@@ -106,6 +135,9 @@ testList.insert_item_at(5,0)
 testList.insert_item_at(4,2)
 testList.insert_item_at(7,4)
 testList.delete_item_at(3)
+testList.display_all
+puts "removing duplicates in single linked list"
+testList.remove_duplicates
 
 testList.display_all
 
