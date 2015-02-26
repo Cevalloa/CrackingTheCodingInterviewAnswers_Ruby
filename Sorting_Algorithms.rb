@@ -110,9 +110,13 @@ end
 puts "##Binary Search##"
 puts binary_search([0,1,2,3,4,5,6,7,8], 7)
 
-puts "Quick Sort.. needs extra space for 2 arrays" 
-def quicksort_memory_hog(array_unsorted)
+#quick Sort
+def quick_sort(array_to_sort)
 
+	reutrn array_to_sort if array_to_sort <= 1
+	pivot = array_to_sort.shuffle.shift
+	left, right = array_to_sort.partition {|item| item < pivot}
+	quick_sort(left).concat(quicksort(right))
 
 end
 

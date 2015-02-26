@@ -110,7 +110,8 @@ class LinkedList
 			starting = current  #Starts checking where it hasn't been checked
 
 			while starting.next != nil  #Continue if it isn't at the end of the line
-
+				puts "starting is #{starting.value
+				}"
 				if starting.next.value == current.value  #If the value is eql to the value we are checking
 					#delete this node
 					starting.next = starting.next.next
@@ -136,6 +137,7 @@ testList.insert_item_at(4,2)
 testList.insert_item_at(7,4)
 testList.delete_item_at(3)
 testList.display_all
+
 puts "removing duplicates in single linked list"
 testList.remove_duplicates
 
