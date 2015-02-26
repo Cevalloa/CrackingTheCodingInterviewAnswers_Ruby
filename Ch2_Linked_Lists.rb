@@ -110,8 +110,7 @@ class LinkedList
 			starting = current  #Starts checking where it hasn't been checked
 
 			while starting.next != nil  #Continue if it isn't at the end of the line
-				puts "starting is #{starting.value
-				}"
+
 				if starting.next.value == current.value  #If the value is eql to the value we are checking
 					#delete this node
 					starting.next = starting.next.next
@@ -127,6 +126,42 @@ class LinkedList
 
 	end
 
+	#2.2 implement algoirthm to find the kth to last element
+		# If k = 1 #=> last element, If k = 2 #=> Second to last element
+	def findKToLast(k)
+
+		length_of_list = 0
+		current = @root
+
+		#Count the length of the list
+		while current.next != nil
+
+			length_of_list += 1
+			current = current.next
+
+		end
+
+		#To what index will we be going to?
+		find_index = length_of_list-k+1
+		current = @root
+
+		find_index.times {current = current.next}
+
+		current.value
+
+	end
+
+	#Recursive version of 2.2
+	def recursiveFindKToLast(head, k)
+
+		return nil if (head == nil)
+
+		i = recursiveFindKToLast(head.next, k) + 1
+		(puts head.value) if i == k
+		i
+
+	end
+
 end
 puts "Start Single Linked List"
 testList = LinkedList.new(4)
@@ -137,9 +172,10 @@ testList.insert_item_at(4,2)
 testList.insert_item_at(7,4)
 testList.delete_item_at(3)
 testList.display_all
+puts "The kth element is #{testList.findKToLast(2)}" #test 2.2
 
 puts "removing duplicates in single linked list"
-testList.remove_duplicates
+testList.remove_duplicates   #test 2.1
 
 testList.display_all
 
