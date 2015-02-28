@@ -245,7 +245,3 @@ testDouble.display_all
 
 
 
-
-
-
-
