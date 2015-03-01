@@ -162,6 +162,22 @@ class LinkedList
 
 	end
 
+	#2.3 Delete node in the middle, with value given
+	def deleteMiddle(value)
+
+		current = @root
+		while (current.next.value != value)
+			if current.next.nil?
+				return "Not found!"
+			else
+			current = current.next
+			end
+		end
+
+		current.next = current.next.next
+
+	end
+
 end
 puts "Start Single Linked List"
 testList = LinkedList.new(4)
