@@ -66,6 +66,7 @@ end
 
 #Another Binary Search Tree with inorder
 puts "#BST" 
+#node in use for a binary search tree
 class Node
 
 	attr_accessor :value, :parent, :left_child, :right_child
@@ -79,6 +80,7 @@ class Node
 
 end
 
+#class for a binary search tree
 class BST
 	attr_accessor :root
 
@@ -106,6 +108,8 @@ class BST
 		established_node
 	end
 
+
+	#tree traversals
 	def pre_order(root_node)
 		return nil if root_node.nil?
 		puts root_node.value
@@ -160,6 +164,7 @@ class BST
 
 	end
 
+	#Runs and checks if a tree is a BST
 	def check_if_bst(root_node)
 		if root_node.nil?
 			return true
@@ -256,6 +261,7 @@ class LinkedList
 
 	end
 
+	#Removes a specified value
 	def remove(value)
 
 		current = @head

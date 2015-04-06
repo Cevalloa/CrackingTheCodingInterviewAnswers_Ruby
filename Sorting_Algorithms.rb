@@ -15,6 +15,7 @@ def merge_sort(array_parameter)
 
 end
 
+#Merges the two arrays together
 def merge(array_left, array_right)
 
 	array_sorted = []
