@@ -40,6 +40,7 @@ end
 
 puts merge_sort(array_to_sort)
 
+puts "End merge sort"
 
 #Bubble Sort
 def bubble_sort(array_parameter)
@@ -66,6 +67,8 @@ end
 
 puts bubble_sort([2,4,6,7,1])
 
+puts "End bubble sort"
+
 # Selection Sort
 
 # The idea of Selection Sort is that we repeatedly find the smallest element in the 
@@ -90,6 +93,8 @@ end
 
 puts "##Selection Sort##" 
 puts selection_sort([2,4,6,7,1])
+
+puts "End selection sort"
 
 puts "##Binary Search##"
 def binary_search(array_sent, key)
@@ -121,7 +126,9 @@ def quick_sort(array_to_sort)
 
 end
 
-
+puts "Quick sort"
+quick_sort[4,1,2]
+puts "End quick sort"
 
 
 
